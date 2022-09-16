@@ -26,6 +26,20 @@ class simple_bt_strategy(FastStrategy):
     
 str_inst = simple_bt_strategy(ds, env, strategy_name)
 str_inst.run()
+
+# give yhou time series of cash, security value, transaction cost, turnover, holding num for each security, leverage and net value as pd.DataFrame
+str_inst.history_summary
+
+# Other separate api to fetch result
+str_inst.history_order(date)
+str_inst.history_holding_num
+str_inst.history_realizable_value
+str_inst.history_cash
+str_inst.history_turnover
+str_inst.history_transaction_cost
+str_inst.history_market_value
+str_inst.history_cost_value
+
 ```
 
 **API for buy and hold**
