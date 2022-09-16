@@ -17,7 +17,7 @@ class BacktestDataSource:
 
     def __init__(self, data, start_date=None, end_date=None, sids_list=None):
         """
-        数据源
+        Data source
 
         It should be adjusted price in form of pd.MultiIndex DataFrame
         It should be noted that data should also contain close price of suspended securities to update net value

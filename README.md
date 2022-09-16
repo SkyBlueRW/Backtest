@@ -3,6 +3,38 @@
 A backtest engine for cross section strategies.
 
 
+# Demo 
+
+**Low level usage**
+
+```python
+from fast_bt import FastStrategy
+
+# load data
+ds = BacktestDataSource(price, start_date)
+# Load Environment variable
+env = StrategyEnvironment(init_cash, fill_time, fill_method, commission, sllipage)
+
+# Define your strategy
+class simple_bt_strategy(FastStrategy):
+    def __init__(self, datasource, env, name):
+        super().__init__(datasource, env, name)
+    def _on_data(self):
+        # A simple strategy of buy and hold
+        if Context.cur_time in dates:
+            self.rebalance(holding.loc[Context.cur_time])
+    
+str_inst = simple_bt_strategy(ds, env, strategy_name)
+str_inst.run()
+```
+
+**API for buy and hold**
+
+```python
+from fast_bt import buy_and_hold
+buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
+```
+
 
 
 

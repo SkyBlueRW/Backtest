@@ -26,7 +26,7 @@ class Context:
 
 class TradingParam:
     """
-    回测中的交易常量
+    Constant used across backtest
     """
     # sllipage
     sllipage = 0.002
