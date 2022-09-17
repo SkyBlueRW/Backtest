@@ -17,12 +17,12 @@ While in the research of cross sectional strategies, such kind of high level gra
 Hence I developed this backtest engine designed specifically for cross section strategies. It take all securitis at a horizon as the basci unit and use vectorized calculation to speed up the process. 
 
 **Pesudo Implementation**
-strategy.run:
-    for t in ALL_horizons:
-        - Update market quote for t 
-        - Place order
-        - Update info with market quote (or before place order depending on setting)
-        
+```python
+    #for t in ALL_horizons:
+        #- Update market quote for t 
+        #- Place order
+        #- Update info with market quote (or before place order depending on setting)
+```
 
 # Demo 
 
@@ -72,6 +72,7 @@ from fast_bt import buy_and_hold
 str_inst = buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
 ```
 
+# Trading Signal research
 
 
 
