@@ -21,6 +21,7 @@ Hence I developed this backtest engine designed specifically for cross section s
     #for t in ALL_horizons:
         #- Update market quote for t 
         #- Place order
+        #- Post trade log
         #- Update info with market quote (or before place order depending on setting)
 ```
 
@@ -74,6 +75,24 @@ str_inst = buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, f
 
 # Trading Signal research
 
+**IC Analysis**
+
+Information Coefficient is widely used to measure linear predictive power of cross sectional signals
+
+```python
+# calculate ic time series
+ic_time_series = cal_ic(signal, ret, universe, method='spearman')
+# calculate ic summary
+print(cal_ic_summary(ic_time_series))
+```
+
+**Long Short Portfolio Backtest**
+
+Zero-dollar portfolio backtest is also a widely used gauge 
+
+```python
+res = long_short_backtest(signal, prcs, universe=None, init_cash=1e8, fill_time='this_bar', fill_method='vwap', commission=None, sllipage=None)
+```
 
 
 
