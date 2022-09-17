@@ -10,7 +10,7 @@ Backtest results just show some sense of the strategy. Historical performance is
 
 **Motivation**
 
-Event driven backtest engines (Zipline as an example) usually loop through events (market quote update, order action ..etc) in significant grangularities. Such design enable the engine to handle all kinds of strategy scenarios as well as provide enhancement possibilities (trading model, etc..). While there is a cost for such high level of gragularities. The number of events (in proportion with time required to run) increased significantly when there are large number of securities in the universe. (N * T * K)
+Event driven backtest engines (Zipline as an example) usually loop through events (market quote update, order action ..etc) in significant grangularities. Such design enable the engine to handle all kinds of strategy scenarios as well as provide enhancement possibilities (trading model, real word trading, etc..). While there is a cost for such high level of gragularities. The number of events (in proportion with time required to run) increased significantly when there are large number of securities in the universe. (N * T * K)
 
 While in the research of cross sectional strategies, such kind of high level grangularity is usually unnecessary. For one hand, there are  very large number of securiteis (a couple of thousands or even tens of thousands). Such kind of strategies usually rely on universe breadth to turn weak cross sectional prediction to risk aware portfolios and make the backtest quite time consuming. On the other hand, this demand for breadth also restrict cross sectional strategies to a stable framework that each horizon instead of each security at all horizons can be used as basic unit to reduce run time error. 
 
