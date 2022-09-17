@@ -23,22 +23,24 @@ class simple_bt_strategy(FastStrategy):
         # A simple strategy of buy and hold
         if Context.cur_time in dates:
             self.rebalance(holding.loc[Context.cur_time])
-    
+
+        # can also get holding / market quote info via to specify path dependent behavior
+        # str_inst.history_order(date)
+        # str_inst.history_holding_num
+        # str_inst.history_realizable_value
+        # str_inst.history_cash
+        # str_inst.history_turnover
+        # str_inst.history_transaction_cost
+        # str_inst.history_market_value
+        # str_inst.history_cost_value
+
 str_inst = simple_bt_strategy(ds, env, strategy_name)
 str_inst.run()
 
 # give yhou time series of cash, security value, transaction cost, turnover, holding num for each security, leverage and net value as pd.DataFrame
 str_inst.history_summary
 
-# Other separate api to fetch result
-str_inst.history_order(date)
-str_inst.history_holding_num
-str_inst.history_realizable_value
-str_inst.history_cash
-str_inst.history_turnover
-str_inst.history_transaction_cost
-str_inst.history_market_value
-str_inst.history_cost_value
+
 
 ```
 
@@ -46,7 +48,7 @@ str_inst.history_cost_value
 
 ```python
 from fast_bt import buy_and_hold
-buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
+str_inst = buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
 ```
 
 
