@@ -64,6 +64,10 @@ str_inst.history_summary
 
 
 
+## Derived API
+
+
+
 ```
 
 **API for buy and hold**
@@ -73,7 +77,15 @@ from fast_bt import buy_and_hold
 str_inst = buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
 ```
 
-# Trading Signal research
+**Long Short Portfolio Backtest**
+
+Zero-dollar portfolio backtest is also a widely used gauge 
+
+```python
+res = long_short_backtest(signal, prcs, universe=None, init_cash=1e8, fill_time='this_bar', fill_method='vwap', commission=None, sllipage=None)
+```
+
+## Others
 
 **IC Analysis**
 
@@ -86,13 +98,18 @@ ic_time_series = cal_ic(signal, ret, universe, method='spearman')
 print(cal_ic_summary(ic_time_series))
 ```
 
-**Long Short Portfolio Backtest**
+**Bucket Portfolio**
 
-Zero-dollar portfolio backtest is also a widely used gauge 
+Bucket portfolio is also a commonly used measure for empirical asset pring
 
 ```python
-res = long_short_backtest(signal, prcs, universe=None, init_cash=1e8, fill_time='this_bar', fill_method='vwap', commission=None, sllipage=None)
+
+# assignment of securities to each bins
+sort_v = cal_sort_quantile(df, name, cut=4, group=None, label=None)
+# calculate bucket return
+bucket_return = cal_bucket_ret(sort, ret, weight=None, delay=1)
 ```
+
 
 
 
