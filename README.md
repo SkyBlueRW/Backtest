@@ -62,22 +62,19 @@ str_inst.run()
 # give yhou time series of cash, security value, transaction cost, turnover, holding num for each security, leverage and net value as pd.DataFrame
 str_inst.history_summary
 
-
+```
 
 ## Derived API
 
 
-
-```
-
-**API for buy and hold**
+**API for buy and hold portfolio Backtest**
 
 ```python
 from fast_bt import buy_and_hold
 str_inst = buy_and_hold(holding, prcs, strategy_name='default', init_cash=1e8, fill_time='next_bar', fill_method='vwap', commission=None, sllipage=None)
 ```
 
-**Long Short Portfolio Backtest**
+**API for signal Long Short Portfolio Backtest**
 
 Zero-dollar portfolio backtest is also a widely used gauge 
 
