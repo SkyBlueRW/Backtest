@@ -75,7 +75,7 @@ def cal_sort_bin(df, name, bins=4, group=None, label=None):
     if label is None:
         label = [str(x) for x in range(1, (n+1))]
     else:
-        assert len(label) == n, "给定的label个数与分组个数不一致"
+        assert len(label) == n, "Number of label is different from number of bins"
     
     group = ['date'] if group is None else ['date', group]
 
@@ -86,7 +86,7 @@ def cal_sort_bin(df, name, bins=4, group=None, label=None):
 
 def cal_bucket_ret(sort, ret, weight=None, delay=1):
     """
-    根据分组信息计算每个分组的日频收益率加权平均
+    Calculate bucket return 
 
     Parameters
     ----------
