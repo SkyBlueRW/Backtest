@@ -1,7 +1,7 @@
 """
-快速回测
+Fast Backtest
 
-fast 回测框架: 以横截面为单位进行回测. 基础单位为pd.Series()
+fast backtest framework: backtest in unit of horizon. The basis unit is pd.Series
 
 1. 回测运行逻辑
 strategy.run:
